@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png"/>
+    <link rel="stylesheet" href="output.css" />
+    <title>Frontend Mentor | Interactive rating component</title>
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html,body{
+        width: 100%;
+        height: 100%;
+        background-color: #F4F7FE;
+      }
+
+    .dark ::placeholder {
+      color: white;
+    }
+
+    .dark input {
+      color: white;
+    }
+
+    </style>
+  </head>
+  <body class="dark:bg-[#141C2F]">
+    <div class="flex justify-center items-center h-screen">
+      <div class="flex flex-col gap-4 lg:w-[50%] md:w-[90%] max-w-[750px]">
+      <div class="flex justify-between bg-white dark:bg-[#1F2A48] rounded-xl p-2 shadow-xl">
+        <h1 class="font-bold text-2xl dark:text-white">devFinder</h1>
+        <div class="flex">
+          <button id="darkButton" class="rounded-full bg-gray-800 text-white px-3 py-2 flex items-center gap-4 shadow-lg">
+            <h1>Dark</h1>
+            <span><ion-icon name="moon"></ion-icon></span>
+          </button>
+          <button id="brightButton" class="rounded-full bg-white text-black px-3 py-2 flex items-center gap-2 hidden">
+            <h1>Bright</h1>
+            <span><ion-icon name="sunny-outline"></ion-icon></span>
+          </button>
+        </div>
+      </div>
+  
+      <div class="">
+        <form class="shadow-xl">   
+          <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+          <div class="relative">
+              <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                  <svg class="w-4 h-4 text-gray-500 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+                  </svg>
+              </div>
+              <input type="search" id="search"  class="block w-full p-4 ps-10 text-sm text-gray-900 rounded-lg bg-white dark:bg-[#1F2A48] outline-none dark:placeholder-white dark:text-white" placeholder="Search User Name..." required>
+              <button type="button" id="btn" onclick="get()" class="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 outline-none font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 shadow-lg">Search</button>
+          </div>
+      </form>
+      </div>
+
+      <div id="card" class="bg-white flex md:flex-row flex-col dark:bg-[#1F2A48] rounded-xl shadow-xl p-5">
+        <div class="w-16 h-16">
+        <img class="rounded-full" src="./images/avatar-jacob-thompson.webp" alt="">
+      </div>
+      <div class="w-full p-5 dark:text-white flex flex-col gap-5">
+        <div class="flex justify-between">
+          <div class="">
+            <h1>Taskeen Haider</h1>
+            <h2 class="text-blue-400">@Code</h2>
+          </div>
+          <div class="">
+            <h2>Fri 20 11 2023</h2>
+          </div>
+        </div>
+
+        <div class=""><h2>Next-level react-js Developer</h2></div>
+          <div class="flex bg-[#F4F7FE] dark:bg-[#141C2F] p-4  shadow-lg hover:bg-white dark:hover:bg-[#1F2A48] rounded-xl w-[100%]">
+            <div class="flex flex-row w-[100%]  justify-around gap-4">
+              <div class="flex flex-col">
+                <p class="text-black dark:text-white ">Following</p>
+                <p class="text-black font-bold text-2xl dark:text-white ">72</p>
+              </div>
+              <div class="flex flex-col">
+                <p class="text-black dark:text-white ">Repo</p>
+                <p class="text-black font-bold text-2xl dark:text-white ">66</p>
+              </div>
+              <div class="flex flex-col">
+                <p class="text-black dark:text-white ">Followers</p>
+                <p class="text-black font-bold text-2xl dark:text-white ">38</p>
+              </div>
+            </div>
+        </div>
+        
+          <div class="flex flex-row justify-start w-full">
+            <div class="flex gap-2 w-1/2">
+              <span><ion-icon name="location"></ion-icon></span>
+              <p>Pakistan</p>
+            </div>
+            <div class="mr-3 flex gap-2">
+              <span><ion-icon name="logo-twitter"></ion-icon></span>
+              <p>Twitter</p>
+            </div>
+          </div>
+
+          <div class="flex flex-row justify-start">
+            <div class="flex gap-2 w-1/2">
+              <span><ion-icon name="logo-github"></ion-icon></span>
+              <p>Github</p>
+            </div>
+            <div class="flex gap-2">
+              <span><ion-icon name="globe-sharp"></ion-icon></span>
+              <p>Website</p>
+            </div>
+          </div>
+
+          <div class="flex flex-row justify-start">
+            <div class="flex gap-2 w-1/2">
+              <span><ion-icon name="briefcase-outline"></ion-icon></span>
+              <p>Company</p>
+            </div>
+            <div class="flex gap-2">
+              <span><ion-icon name="chatbubbles-outline"></ion-icon></span>
+              <p>Blog</p>
+            </div>
+          </div>
+        
+      </div>
+      </div>
+    </div>
+  </div>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
